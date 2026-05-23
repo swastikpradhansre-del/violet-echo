@@ -22,10 +22,10 @@ export const Sidebar = () => {
       {/* Logo */}
       <div className="px-6 mb-7 flex items-center gap-2.5">
         <div className="relative w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-          <Music2 className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
+          <Music2 className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} fill="currentColor" />
         </div>
         <div>
-          <h1 className="font-display font-black text-lg leading-none tracking-tight">Spotify</h1>
+          <h1 className="font-display font-black text-base leading-none tracking-tight">YouTube Music</h1>
           <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Premium</span>
         </div>
       </div>
