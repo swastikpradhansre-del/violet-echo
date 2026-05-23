@@ -1,8 +1,10 @@
 import { ChevronLeft, ChevronRight, Search, Bell, Sun, Moon, Sparkles, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const TopBar = () => {
   const [dark, setDark] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.documentElement.classList.toggle("light", !dark);
@@ -27,7 +29,9 @@ export const TopBar = () => {
           <input
             type="text"
             placeholder="Search songs, artists, podcasts..."
-            className="w-full h-10 pl-11 pr-4 rounded-full bg-secondary/60 border border-transparent focus:border-primary/40 focus:bg-secondary text-sm placeholder:text-muted-foreground outline-none transition-all"
+            onFocus={() => navigate("/search")}
+            readOnly
+            className="w-full h-10 pl-11 pr-4 rounded-full bg-secondary/60 border border-transparent focus:border-primary/40 focus:bg-secondary text-sm placeholder:text-muted-foreground outline-none transition-all cursor-pointer"
           />
         </div>
 
