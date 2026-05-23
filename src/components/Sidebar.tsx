@@ -21,13 +21,12 @@ export const Sidebar = () => {
     <aside className="hidden md:flex w-60 shrink-0 flex-col h-screen sticky top-0 border-r border-sidebar-border bg-sidebar py-5">
       {/* Logo */}
       <div className="px-6 mb-7 flex items-center gap-2.5">
-        <div className="relative w-9 h-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow-violet">
-          <Music2 className="w-5 h-5 text-white" strokeWidth={2.5} />
-          <div className="absolute inset-0 rounded-xl bg-gradient-primary blur-xl opacity-50 -z-10" />
+        <div className="relative w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+          <Music2 className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
         </div>
         <div>
-          <h1 className="font-display font-bold text-lg leading-none tracking-tight">SoundWave</h1>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-accent">Premium</span>
+          <h1 className="font-display font-black text-lg leading-none tracking-tight">Spotify</h1>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Premium</span>
         </div>
       </div>
 
