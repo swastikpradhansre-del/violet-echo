@@ -48,7 +48,7 @@ export const Sidebar = () => {
               <item.icon size={18} strokeWidth={isActive ? 2.5 : 2} />
               <span>{item.label}</span>
               {isActive && <span className="ml-auto h-5 w-1 rounded-full bg-gradient-primary" />}
-            </button>
+            </Link>
           );
         })}
       </nav>
