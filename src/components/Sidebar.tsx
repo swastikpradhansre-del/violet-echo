@@ -21,12 +21,12 @@ export const Sidebar = () => {
     <aside className="hidden md:flex w-60 shrink-0 flex-col h-screen sticky top-0 border-r border-sidebar-border bg-sidebar py-5">
       {/* Logo */}
       <div className="px-6 mb-7 flex items-center gap-2.5">
-        <div className="relative w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+        <div className="relative w-9 h-9 rounded-md bg-primary flex items-center justify-center">
           <Music2 className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} fill="currentColor" />
         </div>
         <div>
-          <h1 className="font-display font-black text-base leading-none tracking-tight">YouTube Music</h1>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Premium</span>
+          <h1 className="font-display font-black text-base leading-none tracking-tight">Amazon Music</h1>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Unlimited</span>
         </div>
       </div>
 
