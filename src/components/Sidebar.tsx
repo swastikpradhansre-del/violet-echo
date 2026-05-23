@@ -3,19 +3,19 @@ import { CoverArt } from "./CoverArt";
 import { quickPicks } from "@/lib/mockData";
 import { Equalizer } from "./Equalizer";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { icon: Home, label: "Home", active: true },
-  { icon: Search, label: "Search" },
-  { icon: Library, label: "Your Library" },
-  { icon: Mic2, label: "Podcasts" },
-  { icon: Radio, label: "Radio" },
-  { icon: User, label: "Artists" },
+  { icon: Home, label: "Home", to: "/" },
+  { icon: Search, label: "Search", to: "/search" },
+  { icon: Library, label: "Your Library", to: "/" },
+  { icon: Mic2, label: "Podcasts", to: "/" },
+  { icon: Radio, label: "Radio", to: "/" },
+  { icon: User, label: "Artists", to: "/" },
 ];
 
 export const Sidebar = () => {
-  const [active, setActive] = useState("Home");
+  const { pathname } = useLocation();
 
   return (
     <aside className="hidden md:flex w-60 shrink-0 flex-col h-screen sticky top-0 border-r border-sidebar-border bg-sidebar py-5">
@@ -33,11 +33,11 @@ export const Sidebar = () => {
       {/* Nav */}
       <nav className="px-3 space-y-1">
         {navItems.map((item) => {
-          const isActive = active === item.label;
+          const isActive = pathname === item.to;
           return (
-            <button
+            <Link
               key={item.label}
-              onClick={() => setActive(item.label)}
+              to={item.to}
               className={cn(
                 "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all",
                 isActive
@@ -48,7 +48,7 @@ export const Sidebar = () => {
               <item.icon size={18} strokeWidth={isActive ? 2.5 : 2} />
               <span>{item.label}</span>
               {isActive && <span className="ml-auto h-5 w-1 rounded-full bg-gradient-primary" />}
-            </button>
+            </Link>
           );
         })}
       </nav>
